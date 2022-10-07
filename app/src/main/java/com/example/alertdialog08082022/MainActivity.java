@@ -134,6 +134,11 @@ public class MainActivity extends AppCompatActivity {
                                                            colorGreenValue,
                                                            colorBlueValue
                     ));
+                    String Hexvalue = String.format("#%02X%02X%02X%02X", colorAlphaValue,
+                                                                         colorRedValue,
+                                                                         colorGreenValue,
+                                                                         colorBlueValue);
+                    tvHex.setText(String.format(Hexvalue));
                 }
 
                 @Override
