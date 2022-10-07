@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                             colorGreenValue,
                             colorBlueValue
                     ));
-                    // Hex convert code (From RGB to Hex)
+                    // hexValue = convert code from RGB to Hex
                     String hexValue = String.format("HEX # %02X %02X%02X%02X", colorAlphaValue,
                             colorRedValue,
                             colorGreenValue,
