@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (window != null) {
                     window.setGravity(Gravity.CENTER);
-                    window.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
+                    window.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT,
+                                     ConstraintLayout.LayoutParams.WRAP_CONTENT);
                 }
 
                 SeekBar seekBarAlpha = dialog.findViewById(R.id.seek_bar_alpha);
@@ -134,11 +135,12 @@ public class MainActivity extends AppCompatActivity {
                                                            colorGreenValue,
                                                            colorBlueValue
                     ));
-                    String Hexvalue = String.format("#%02X%02X%02X%02X", colorAlphaValue,
-                                                                         colorRedValue,
-                                                                         colorGreenValue,
-                                                                         colorBlueValue);
-                    tvHex.setText(String.format(Hexvalue));
+                    // Hex convert code (From RGB to Hex)
+                    String hexValue = String.format("HEX # %02X %02X%02X%02X", colorAlphaValue,
+                                                                               colorRedValue,
+                                                                               colorGreenValue,
+                                                                               colorBlueValue);
+                    tvHex.setText(String.format(hexValue));
                 }
 
                 @Override
