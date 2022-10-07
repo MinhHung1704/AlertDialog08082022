@@ -1,9 +1,5 @@
 package com.example.alertdialog08082022;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -17,9 +13,14 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btnAlertDialog, btnDialog;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnAlertDialog = findViewById(R.id.button_alert_dialog);
         btnDialog = findViewById(R.id.button_dialog);
-
         btnAlertDialog.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -37,18 +38,15 @@ public class MainActivity extends AppCompatActivity {
                 builder.setMessage("Đã có bản cập nhật mới");
                 builder.setIcon(android.R.drawable.star_on);
                 builder.setCancelable(false);
-
                 builder.setPositiveButton("Cập nhật", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                     }
                 });
 
                 builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                     }
                 });
 
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             int colorRedValue = 0;
             int colorGreenValue = 0;
             int colorBlueValue = 0;
-            TextView tvHex,tvRgb,tvButtonOk,tvButtonCancel;
+            TextView tvHex, tvRgb, tvButtonOk, tvButtonCancel;
             ImageView imgBackGround;
 
             @Override
@@ -75,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 if (window != null) {
                     window.setGravity(Gravity.CENTER);
                     window.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT,
-                                     ConstraintLayout.LayoutParams.WRAP_CONTENT);
+                            ConstraintLayout.LayoutParams.WRAP_CONTENT);
                 }
 
                 SeekBar seekBarAlpha = dialog.findViewById(R.id.seek_bar_alpha);
@@ -104,7 +102,9 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show();
             }
 
-            private SeekBar.OnSeekBarChangeListener listenerSeekBarChange = new SeekBar.OnSeekBarChangeListener() {
+            private SeekBar.OnSeekBarChangeListener listenerSeekBarChange =
+                    new SeekBar.OnSeekBarChangeListener() {
+
                 @SuppressLint("DefaultLocale")
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int colorValue, boolean b) {
@@ -130,27 +130,25 @@ public class MainActivity extends AppCompatActivity {
                             colorBlueValue
                     ));
                     imgBackGround.setBackgroundColor(Color.argb(
-                                                           colorAlphaValue,
-                                                           colorRedValue,
-                                                           colorGreenValue,
-                                                           colorBlueValue
+                            colorAlphaValue,
+                            colorRedValue,
+                            colorGreenValue,
+                            colorBlueValue
                     ));
                     // Hex convert code (From RGB to Hex)
                     String hexValue = String.format("HEX # %02X %02X%02X%02X", colorAlphaValue,
-                                                                               colorRedValue,
-                                                                               colorGreenValue,
-                                                                               colorBlueValue);
+                            colorRedValue,
+                            colorGreenValue,
+                            colorBlueValue);
                     tvHex.setText(String.format(hexValue));
                 }
 
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {
-
                 }
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
-
                 }
             };
         });
