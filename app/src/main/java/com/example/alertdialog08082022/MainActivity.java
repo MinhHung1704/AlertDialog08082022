@@ -105,52 +105,55 @@ public class MainActivity extends AppCompatActivity {
             private SeekBar.OnSeekBarChangeListener listenerSeekBarChange =
                     new SeekBar.OnSeekBarChangeListener() {
 
-                @SuppressLint("DefaultLocale")
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int colorValue, boolean b) {
-                    switch (seekBar.getId()) {
-                        case R.id.seek_bar_alpha:
-                            colorAlphaValue = colorValue;
-                            break;
-                        case R.id.seek_bar_red:
-                            colorRedValue = colorValue;
-                            break;
-                        case R.id.seek_bar_green:
-                            colorGreenValue = colorValue;
-                            break;
-                        case R.id.seek_bar_blue:
-                            colorBlueValue = colorValue;
-                            break;
-                    }
-                    tvRgb.setText(String.format(
-                            "RGB %d %d %d %d",
-                            colorAlphaValue,
-                            colorRedValue,
-                            colorGreenValue,
-                            colorBlueValue
-                    ));
-                    imgBackGround.setBackgroundColor(Color.argb(
-                            colorAlphaValue,
-                            colorRedValue,
-                            colorGreenValue,
-                            colorBlueValue
-                    ));
-                    // hexValue = convert code from RGB to Hex
-                    String hexValue = String.format("HEX # %02X %02X%02X%02X", colorAlphaValue,
-                            colorRedValue,
-                            colorGreenValue,
-                            colorBlueValue);
-                    tvHex.setText(String.format(hexValue));
-                }
+                        @SuppressLint("DefaultLocale")
+                        @Override
+                        public void onProgressChanged(SeekBar seekBar, int colorValue, boolean b) {
+                            switch (seekBar.getId()) {
+                                case R.id.seek_bar_alpha:
+                                    colorAlphaValue = colorValue;
+                                    break;
+                                case R.id.seek_bar_red:
+                                    colorRedValue = colorValue;
+                                    break;
+                                case R.id.seek_bar_green:
+                                    colorGreenValue = colorValue;
+                                    break;
+                                case R.id.seek_bar_blue:
+                                    colorBlueValue = colorValue;
+                                    break;
+                            }
+                            tvRgb.setText(String.format(
+                                    "RGB %d %d %d %d",
+                                    colorAlphaValue,
+                                    colorRedValue,
+                                    colorGreenValue,
+                                    colorBlueValue
+                            ));
+                            imgBackGround.setBackgroundColor(Color.argb(
+                                    colorAlphaValue,
+                                    colorRedValue,
+                                    colorGreenValue,
+                                    colorBlueValue
+                            ));
+                            // hexValue = convert code from RGB to Hex
+                            String hexValue = String.format(
+                                    "HEX # %02X %02X%02X%02X",
+                                    colorAlphaValue,
+                                    colorRedValue,
+                                    colorGreenValue,
+                                    colorBlueValue);
+                            tvHex.setText(String.format(hexValue)
+                            );
+                        }
 
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) {
-                }
+                        @Override
+                        public void onStartTrackingTouch(SeekBar seekBar) {
+                        }
 
-                @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {
-                }
-            };
+                        @Override
+                        public void onStopTrackingTouch(SeekBar seekBar) {
+                        }
+                    };
         });
     }
 }
